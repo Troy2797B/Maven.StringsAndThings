@@ -71,10 +71,11 @@ public class StringsAndThings {
         int numOfIs = 0;
         int numOfNot = 0;
         for (int i = 0; i < input.length(); i++){
-            if (input.charAt(i) == 'i' && input.charAt(i +1) == 's'){
+            if (i == input.length() - 1){
+                break;
+            } else if (input.charAt(i) == 'i' && input.charAt(i +1) == 's'){
                 numOfIs = numOfIs + 1;
-            }
-            if (input.charAt(i) == 'n' && input.charAt(i + 1) == 'o' && input.charAt(i + 2) == 't'){
+            } else if(input.charAt(i) == 'n' && input.charAt(i + 1) == 'o' && input.charAt(i + 2) == 't'){
                 numOfNot = numOfNot + 1;
             }
         }
@@ -90,10 +91,14 @@ public class StringsAndThings {
      */
     public Boolean gIsHappy(String input){
         //run a loop through input
+        for (int i = 0; i < input.length(); i++){
+            if (input.charAt(i) == 'g' && input.charAt(i + 1) == 'g'){
+                return true;
+            }
+        } return false;
         //check if character.isletter ' g'
         // if it is true, run a second loop through it at the next letter
-        //chack if that character is also 'g'
-        return null;
+        //check if that character is also 'g'
     }
 
 
@@ -105,6 +110,18 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
+        Integer triple = 0;
+        //run for loop through input
+        for (int i = 0; i < input.length(); i++){
+            if (i == input.length() - 1){
+                break;
+            } else if (input.charAt(i) == input.charAt (i+1) && input.charAt(i) == input.charAt(i + 2)){
+                triple = triple + 1;
+            }
+        }
+        //check the letter and iff the next two are equal
+        //then triple = triple + 1
+
+        return triple;
     }
 }
