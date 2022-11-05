@@ -42,25 +42,21 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
-        char[] indexBase = base.toCharArray();
+        /*char[] indexBase = base.toCharArray();
         char[] indexRemove = remove.toCharArray();
         StringBuffer sb = new StringBuffer();
         //looping through remove array
-        for (int i = 0; i < indexRemove.length; i++){
+        for (int i = 0; i < indexRemove.length - 1; i++){
             //looping inside with base array
-            for (int k = 0; k < indexBase.length; i++){
+            for (int k = 0; k < indexBase.length -1; i++){
                 //checking if both current indexes are the same
                 if (indexRemove[i] == indexBase[k]){
                     //trying to remove it from base if they are
                     sb.deleteCharAt(indexBase[k]);
                 }
             }
-        }
-
-
-
-
-        return null;
+        }*/
+        return base.replaceAll(remove, "");
     }
 
     /**
@@ -72,8 +68,17 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
-
-        return null;
+        int numOfIs = 0;
+        int numOfNot = 0;
+        for (int i = 0; i < input.length(); i++){
+            if (input.charAt(i) == 'i' && input.charAt(i +1) == 's'){
+                numOfIs = numOfIs + 1;
+            }
+            if (input.charAt(i) == 'n' && input.charAt(i + 1) == 'o' && input.charAt(i + 2) == 't'){
+                numOfNot = numOfNot + 1;
+            }
+        }
+        return numOfNot == numOfIs;
     }
 
     /**
