@@ -1,6 +1,8 @@
 package io.zipcoder;
 
 
+import java.util.ArrayList;
+
 /**
  * @author tariq
  */
@@ -15,7 +17,19 @@ public class StringsAndThings {
      *           countYZ("day fyyyz"); // Should return 2
      */
     public Integer countYZ(String input){
-        return null;
+        //ArrayList<String> index = new ArrayList<>();
+        char [] index = input.toCharArray();
+        Integer numOfYZ = 0;
+        for (int i = 0; i < index.length; i++){
+
+            if (index[i] == ' '){
+                if (index[i - 1] == 'y' || index[i - 1] == 'z'){
+                    numOfYZ = numOfYZ + 1;
+                }
+            }
+        } if (index[index.length - 1] == 'y' || index[index.length - 1] == 'z'){
+            numOfYZ = numOfYZ + 1;
+        }return numOfYZ;
     }
 
     /**
@@ -28,6 +42,24 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
+        char[] indexBase = base.toCharArray();
+        char[] indexRemove = remove.toCharArray();
+        StringBuffer sb = new StringBuffer();
+        //looping through remove array
+        for (int i = 0; i < indexRemove.length; i++){
+            //looping inside with base array
+            for (int k = 0; k < indexBase.length; i++){
+                //checking if both current indexes are the same
+                if (indexRemove[i] == indexBase[k]){
+                    //trying to remove it from base if they are
+                    sb.deleteCharAt(indexBase[k]);
+                }
+            }
+        }
+
+
+
+
         return null;
     }
 
@@ -40,6 +72,7 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
+
         return null;
     }
 
@@ -51,6 +84,10 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
+        //run a loop through input
+        //check if character.isletter ' g'
+        // if it is true, run a second loop through it at the next letter
+        //chack if that character is also 'g'
         return null;
     }
 
